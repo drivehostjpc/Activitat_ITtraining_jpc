@@ -2,20 +2,82 @@
 /* CSS Document */
 
 @font-face {
-  font-family: Arcade;
+  font-family: Antiga;
   src: url(../fonts/Arcade.ttf);
 }
 
 @font-face {
-  font-family: OdinRounded;
+  font-family: Enunciat;
   src: url(../fonts/OdinRounded.otf);
 }
 
+/* -- Definició de constants a css -- */
+:root {
+  --vermell: #ff0000; /*  color: #d63031 */
+  --groc: #fdcb6e;
+  --negre:#000000;
+  --blanc:#ffffff;
+  --verd: #00b894;
+  --fons: #0984e3;
+  --ombra: #74b9ff;
+  --grisfosc: #555555;
+  --grisclar: #bbbbbb;
+
+  /* seccio */
+  --seccioFons: var(--fons);
+  --seccioVora: var(--blanc);
+  --seccioOmbra: var(--ombra);
+
+  /* enunciat */
+  --enunciatText: var(--blanc);
+
+  /* opcio */
+  --opcioFons:var(--fons);
+  --opcioFonsVora: #74b9ff;
+  --opcioFonsOmbra: var(--ombra);
+
+  /* boto */
+  --botoActiuFons:var(--verd);
+  --botoActiuText:var(--blanc);
+  --botoActiuVora:var(--blanc);
+  --botoActiuOmbra:var(--vermell);
+  --botoActiuTextHover:var(--negre);
+  --botoActiuFonsHover: #00cec9; /*74b9ff*/
+  --botoActiuOmbraHover: #74b9ff; /*74b9ff*/
+
+  --botoInactiuFons: #fa9090;
+  --botoInactiuText: var(--vermell);
+}
+/* -- FINAL Definició de constants a css -- */
+
+/* -- Definició de classes per dotar de color a qualsevol element -- */
+.vermell {
+  color: var(--vermell);
+  /*  color: #d63031 */
+}
+
+.groc {
+  color: var(--groc);
+  /* color: #fdcb6e; */
+}
+
+.negre {
+  color:var(--negre);
+}
+
+.verd {
+  color: var(--verd);
+}
+/* -- FINAL Definició de classes per dotar de color als elements -- */
+
+
+/* -- Definició d'atributs que per defecte tindrà qualsevol element. */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+/* -- FINAL Definició d'atributs que per defecte tindrà qualsevol element. */
 
 html {
   height: 100%;
@@ -23,7 +85,8 @@ html {
 
 body {
   height: 100%;
-  background-color: #2d3436;
+  background-color:black;
+  /* background-color: Gunmetal; */
   /*overflow: hidden;*/
 }
 
@@ -32,21 +95,9 @@ header {
   display: flex;
   justify-content: center;
   padding-top: 10px;
-  font-family: Arcade;
+  font-family: Antiga;
   font-size: 7em;
   font-weight: 100;
-}
-
-span.vermell {
-  color: #d63031;
-}
-
-span.groc {
-  color: #fdcb6e;
-}
-
-span.verd {
-  color: #00b894;
 }
 
 main {
@@ -57,7 +108,7 @@ main {
 }
 
 article {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: center;
 }
@@ -65,84 +116,129 @@ article {
 section {
   height: 90%;
   padding: 30px;
-  background-color: #0984e3;
-  border: 10px solid #ffffff;
+  border: 10px solid var(--seccioVora);
+  background-color: var(--seccioFons);
+  box-shadow: 0px 0px 30px var(--seccioOmbra);
   border-radius: 50px;
-  box-shadow: 0px 0px 30px #74b9ff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-section#pregunta-2, section#pregunta-3, section#pregunta-4 {
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d3d3d3;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgrey;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: lightgrey;
+}
+/* section#pregunta-2, section#pregunta-3, section#pregunta-4 {
+  display: none;
+} */
+
+.elementOcult {
   display: none;
 }
 
+.elementVisible {
+  display: flex;
+}
+
+.noMarcada {
+  background-color: white;
+}
+
+.siMarcada {
+  background-color: #00b894!important;
+  border-color: greenyellow!important;
+}
+
 section h2 {
-  align-self: flex-start;
-  font-family: Arcade;
+  /* align-self: flex-start; */
+  color: var(--negre);
+  font-family: Antiga;
   font-size: 3em;
-  font-weight: 100;
-  color: #74b9ff;
+  font-weight: 75;
+  text-align: center;
+  /* color: #74b9ff; */
 }
 
 div.enunciat p {
-  font-family: OdinRounded;
+  font-family: Enunciat;
+  color: var(--enunciatText);
   font-size: 1.5em;
-  color: #ffffff;
   text-align: justify;
   padding: 0px 40px;
 }
 
 div.respostes {
-  display: flex;
+   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-div.respostes div {
-  width: 40%;
+div.opcio {
+  width: 45%;
   height: 60px;
   margin: 10px;
   padding: 5px;
   border: 3px solid #74b9ff;
-  background-color: #ffffff;
+  background-color: var(--blanc);
   border-radius: 10px;
   line-height: 40px;
   vertical-align: middle;
 }
 
-div.respostes div:hover {
-  border: 3px solid #fdcb6e;
+div.opcio:hover {
+  background-color: var(--grisclar);
+  border: 3px solid var(--groc);
+}
+
+div.opcio::selection {
+  border: 3px solid var(--vermell);
+}
+
+input, select, label {
+  font-family: Enunciat;
+  font-size: 1.5em;
+  color: var(--seccioFons);
 }
 
 label {
   width: 50%;
-  font-family: OdinRounded;
-  font-size: 1.5em;
-  color: #0984e3;
 }
 
 input, select {
-  font-family: OdinRounded;
-  font-size: 1.5em;
-  color: #0984e3;
   border: 0px;
   outline: none;
 }
 
 input[type=text], select {
-  width: 100%;
   margin-top: 5px;
+}
+
+select {
+  width: 100%;
+}
+
+input[type=radio],input[type=text], input[type=checkbox] {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 button {
   width: 20%;  
-  font-family: OdinRounded;
+  font-family: Enunciat;
   font-size: 1.5em;
-  color: #ffffff;
-  background-color: #00b894;
-  border: 3px solid #ffffff;
+  color: var(--botoActiuText);
+  background-color: var(--botoActiuFons);
+  border: 3px solid var(--botoActiuVora);
+  box-shadow: var(--botoActiuOmbra);
   border-radius: 10px;
   padding: 10px;
   margin-top: 30px;
@@ -151,14 +247,24 @@ button {
 }
 
 button:hover {
-  background-color: #00cec9;
-  box-shadow: 0px 0px 15px #74b9ff;
+  color: var(--botoActiuTextHover);
+  background-color: var(--botoActiuFonsHover);
+  box-shadow: 0px 0px 15px var(--botoActiuOmbraHover); /* 74b9ff*/
   cursor: pointer;
+}
+
+button:disabled {
+  color: var(--botoInactiuText);
+  background-color: var(--botoInactiuFons);
+  box-shadow: 0px 0px 15px var(--botoInactiuText);
+  border: 3px solid var(--botoInactiuText);
+  cursor: not-allowed;
 }
 
 footer {
   height: 5%;
-  background-color: #ff7675;
+  background-color: IndianRed;
+  /* background-color: #ff7675; */
   padding-top: 10px;
   padding-right: 10px;
   opacity: 0.6;
@@ -167,7 +273,7 @@ footer {
 }
 
 footer span {
-  font-family: Arcade;
-  font-size: 1.2em;
-  font-weight: 100;
+  font-family: Antiga;
+  font-size: 1.3em;
+  color: var(--groc);
 }
