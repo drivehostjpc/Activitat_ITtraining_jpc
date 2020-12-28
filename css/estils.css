@@ -36,6 +36,9 @@
   --opcioFonsVora: #74b9ff;
   --opcioFonsOmbra: var(--ombra);
 
+  /* input[type=radio]:checked */
+  --inputRadioSelecionatFons: #00cec9;
+
   /* boto */
   --botoActiuFons:var(--verd);
   --botoActiuText:var(--blanc);
@@ -47,6 +50,10 @@
 
   --botoInactiuFons: #fa9090;
   --botoInactiuText: var(--vermell);
+
+  /* footer */
+  --footerText: var(--groc);
+  --footerFons: IndianRed;
 }
 /* -- FINAL Definició de constants a css -- */
 
@@ -70,13 +77,22 @@
 }
 /* -- FINAL Definició de classes per dotar de color als elements -- */
 
+/*   */
+
+.opcio:focus {
+  outline-color: white;
+}
+
+/*   */
 
 /* -- Definició d'atributs que per defecte tindrà qualsevol element. */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  border: none; 
 }
+
 /* -- FINAL Definició d'atributs que per defecte tindrà qualsevol element. */
 
 html {
@@ -86,8 +102,6 @@ html {
 body {
   height: 100%;
   background-color:black;
-  /* background-color: Gunmetal; */
-  /*overflow: hidden;*/
 }
 
 header {
@@ -124,22 +138,6 @@ section {
   flex-direction: column;
   justify-content: space-around;
 }
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #d3d3d3;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: lightgrey;
-}
-
-::-ms-input-placeholder { /* Microsoft Edge */
-  color: lightgrey;
-}
-/* section#pregunta-2, section#pregunta-3, section#pregunta-4 {
-  display: none;
-} */
 
 .elementOcult {
   display: none;
@@ -182,7 +180,7 @@ div.respostes {
   flex-wrap: wrap;
 }
 
-div.opcio {
+label.opcio {
   width: 45%;
   height: 60px;
   margin: 10px;
@@ -203,35 +201,63 @@ div.opcio::selection {
   border: 3px solid var(--vermell);
 }
 
-input, select, label {
+input, select, label, option {
+  overflow: visible;
   font-family: Enunciat;
-  font-size: 1.5em;
   color: var(--seccioFons);
+  border: 0px solid white;
+}
+
+input, select, option {
+  font-size: 1em;
 }
 
 label {
+  font-size: 1.5em;
+}
+
+label.opcio span {
   width: 50%;
 }
-
-input, select {
-  border: 0px;
-  outline: none;
+label.opcio input[type=text] {
+  width: 95%;
 }
 
-input[type=text], select {
-  margin-top: 5px;
+label.opcio input[type=text]:focus, label.opcio select:focus {
+  outline-color: white;
+  border-bottom: dotted 2px var(--grisclar);
 }
 
-select {
+label.opcio select {
   width: 100%;
 }
 
-input[type=radio],input[type=text], input[type=checkbox] {
+input[type=radio], input[type=text], input[type=checkbox] {
   margin-left: 10px;
   margin-right: 10px;
 }
+ 
+input[type=radio].checkmark {
+ background-color: var(--inputRadioSelecionatFons);
+}
+
+
+input[type=text]::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d3d3d3;
+  opacity: 1; /* Firefox */
+
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: lightgrey;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: lightgrey;
+}
 
 button {
+  overflow: visible;
   width: 20%;  
   font-family: Enunciat;
   font-size: 1.5em;
@@ -263,8 +289,7 @@ button:disabled {
 
 footer {
   height: 5%;
-  background-color: IndianRed;
-  /* background-color: #ff7675; */
+  background-color: var(--footerFons);
   padding-top: 10px;
   padding-right: 10px;
   opacity: 0.6;
@@ -275,5 +300,5 @@ footer {
 footer span {
   font-family: Antiga;
   font-size: 1.3em;
-  color: var(--groc);
+  color: var(--footerText);
 }
