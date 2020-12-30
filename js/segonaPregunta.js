@@ -1,0 +1,3 @@
+function seguentPregunta(){
+  alert("hola");
+}
