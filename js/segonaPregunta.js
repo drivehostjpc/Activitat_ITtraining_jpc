@@ -1,3 +1,6 @@
+let ultimaPreg = 4;
+
+
 function seguentPregunta(objecte){
   let numPreg, numPregSeguent, indexPreg;  
   // ID = pregunta-1
@@ -13,7 +16,17 @@ alert("numPreg " + numPreg);
         pregunta = document.getElementById("pregunta-" + numPreg);
         pregunta.classList.remove("elementVisible");
         pregunta.classList.add("elementOcult");
-        pregunta = document.getElementById("pregunta-" + numPregSeguent);
-        pregunta.classList.remove("elementOcult");
-        pregunta.classList.add("elementVisible");
+        if (numPreg!=ultimaPreg){
+          pregunta = document.getElementById("pregunta-" + numPregSeguent);
+          pregunta.classList.remove("elementOcult");
+          pregunta.classList.add("elementVisible");
+        } else {
+          pregunta = document.getElementById("resultat");
+          pregunta.classList.add("elementVisible");
+          pregunta.classList.remove("elementOcult");
+        }
 }  // FINAL   function passaSeguent()
+
+function guardaInputEscollit(objecte){
+  alert("objecte " + objecte);
+}

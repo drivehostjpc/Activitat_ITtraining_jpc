@@ -21,21 +21,21 @@
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
-            <div class="respostes">
+            <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="checkbox" id="resp-01-opcio-01"/>
+                <input type="radio" name="preg_001" id="resp-01-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-01-opcio-02" />
+                <input type="radio" name="preg_001" id="resp-01-opcio-02"/>
                 <span>Nemo enim ipsam voluptatem quia</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-01-opcio-03"/>
+                <input type="radio" name="preg_001" id="resp-01-opcio-03"/>
                 <span>At vero eos et accusamus et iusto odio</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-01-opcio-04"/>
+                <input type="radio" name="preg_001" id="resp-01-opcio-04"/>
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
@@ -47,21 +47,21 @@
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
-            <div class="respostes">
+            <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="checkbox" id="resp-02-opcio-01"/>
+                <input type="radio" name="preg_002" id="resp-02-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-02-opcio-02" />
+                <input type="radio" name="preg_002" id="resp-02-opcio-02"/>
                 <span>Nemo enim ipsam voluptatem quia</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-02-opcio-03"/>
+                <input type="radio" name="preg_002" id="resp-02-opcio-03"/>
                 <span>At vero eos et accusamus et iusto odio</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-02-opcio-04"/>
+                <input type="radio" name="preg_002" id="resp-02-opcio-04"/>
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
@@ -73,54 +73,60 @@
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
-            <div class="respostes">
+            <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="checkbox" id="resp-03-opcio-01"/>
+                <input type="radio" name="preg_003" id="resp-03-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-03-opcio-02" />
+                <input type="radio" name="preg_003" id="resp-03-opcio-02"/>
                 <span>Nemo enim ipsam voluptatem quia</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-03-opcio-03"/>
+                <input type="radio" name="preg_003" id="resp-03-opcio-03"/>
                 <span>At vero eos et accusamus et iusto odio</span>
               </label>
               <label class="opcio">
-                <input type="checkbox" id="resp-03-opcio-04"/>
+                <input type="radio" name="preg_003" id="resp-03-opcio-04"/>
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
             <button onclick="seguentPregunta(this)">Següent >></button>
           </section> <!-- FINAL <section id="pregunta-#"> -->
+          
+          <section id="pregunta-4" class="elementOcult">
+            <span class="titol">Pregunta #4</span>
+            <div class="enunciat">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
+            </div>
+          <div class="respostes" onchange="guardaInputEscollit(this)">
+            <label class="opcio">
+              <input type="radio" name="preg_004" id="resp-04-opcio-01"/>
+              <span>Seda ut perspiciatis unde omnis</span>
+            </label>
+            <label class="opcio">
+              <input type="radio" name="preg_004" id="resp-04-opcio-02"/>
+              <span>Nemo enim ipsam voluptatem quia</span>
+            </label>
+            <label class="opcio">
+              <input type="radio" name="preg_004" id="resp-04-opcio-03"/>
+              <span>At vero eos et accusamus et iusto odio</span>
+            </label>
+            <label class="opcio">
+              <input type="radio" name="preg_004" id="resp-04-opcio-04"/>
+              <span>Et harum quidem rerum facilis est et expedita</span>
+            </label>
+          </div> <!-- FINAL <div class="respostes">-->
+          <button onclick="seguentPregunta(this)">Següent >></button>
+        </section> <!-- FINAL <section id="pregunta-#"> -->
 
-            <section id="pregunta-4" class="elementOcult">
-              <span class="titol">Pregunta #4</span>
-              <div class="enunciat">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
-              </div>
-              <div class="respostes">
-                <label class="opcio">
-                  <input type="checkbox" id="resp-04-opcio-01"/>
-                  <span>Seda ut perspiciatis unde omnis</span>
-                </label>
-                <label class="opcio">
-                  <input type="checkbox" id="resp-04-opcio-02" />
-                  <span>Nemo enim ipsam voluptatem quia</span>
-                </label>
-                <label class="opcio">
-                  <input type="checkbox" id="resp-04-opcio-03"/>
-                  <span>At vero eos et accusamus et iusto odio</span>
-                </label>
-                <label class="opcio">
-                  <input type="checkbox" id="resp-04-opcio-04"/>
-                  <span>Et harum quidem rerum facilis est et expedita</span>
-                </label>
-              </div> <!-- FINAL <div class="respostes">-->
-              <button onclick="seguentPregunta(this)">Següent >></button>
-            </section> <!-- FINAL <section id="pregunta-#"> -->
-
-
+        <section id="resultat" class="elementOcult">
+          <span class="titol">Resultat</span>
+          <div class="enunciat">
+            <p><span id="textResultat"></span></p>
+          </div>
+          <span class="resultat" id="notaFinal"></span>
+        </section> <!-- FINAL <section id="respostes"> -->
       </article>  <!-- FINAL <article> -->
     </main>  <!-- FINAL <main> -->
 
