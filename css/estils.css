@@ -37,7 +37,8 @@
   --opcioFonsOmbra: var(--ombra);
 
   /* input[type=radio]:checked */
-  --inputRadioSelecionatFons: #00cec9;
+  --inputRadioSelecionatFons: #74b9ff;
+  --inputRadioSelecionatVora: var(--grisfosc);
 
   /* boto */
   --botoActiuFons:var(--verd);
@@ -147,6 +148,14 @@ section span.titol {
   text-align: center;
 }
 
+section span.resultat {
+  /* align-self: flex-start; */
+  color: var(--blau);
+  font-family: Antiga;
+  font-size: 4em;
+  text-align: center;
+}
+
 .elementOcult {
   display: none;
 }
@@ -173,6 +182,29 @@ div.enunciat p {
   padding: 0px 40px;
 }
 
+div.enunciat span {
+  font-family: Enunciat;
+  color: var(--enunciatText);
+  font-size: 1em;
+  text-align: justify;
+}
+
+div.enunciat span.unPunt, div.enunciat span.capPunt {
+  padding-left: 30px;
+  padding-right: 30px;
+  /* font-weight: bold; */
+}
+
+div.enunciat span.unPunt {
+  color: var(--negre);
+  background-color: lightgreen;
+}
+
+div.enunciat span.capPunt {
+  color: var(--vermell);
+  background-color: lightcoral;
+}
+
 div.respostes {
    display: flex;
   justify-content: center;
@@ -183,7 +215,7 @@ div.respostes {
 
 label.opcio {
   width: 45%;
-  height: 60px;
+  /* height: 60px; */
   margin: 10px;
   padding: 5px;
   border: 3px solid #74b9ff;
@@ -200,6 +232,12 @@ label.opcio:hover {
 
 label.opcio::selection {
   border: 3px solid var(--vermell);
+}
+
+label.checked {
+  background-color: var(--inputRadioSelecionatFons);
+  border-color: var(--inputRadioSelecionatVora);
+  color: var(--blanc);
 }
 
 input, select, label, option {
@@ -221,6 +259,8 @@ label {
 label.opcio span {
   width: 50%;
 }
+
+
 
 label.opcio input[type=text] {
   width: 95%;
