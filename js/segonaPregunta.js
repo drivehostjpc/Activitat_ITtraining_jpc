@@ -2,7 +2,7 @@ let arrRespostes=[4];
 let arrRespostesCorrectes=[4];
 
 // arrPreguntes=[1, 2, 3, 4];
-arrRespostes=["","","",""];
+arrRespostes=["0000","0000","0000","0000"];
 arrRespostesCorrectes=["1000","1100","1110","1111"];
 
 let ultimaPreg=4;
@@ -19,6 +19,10 @@ function seguentPregunta(objecte){
   numPregSeguent = numPreg + 1;
   indexPreg = numPreg - 1;
 // alert("numPreg " + numPreg);
+
+if (arrRespostes[indexPreg]=="0000"){
+  alert("No hi ha cap seleccionat!");
+  } else { // ELSE if (arrRespostes[numPreg]==-1)
         pregunta = document.getElementById("pregunta-" + numPreg);
         pregunta.classList.remove("elementVisible");
         pregunta.classList.add("elementOcult");
@@ -32,6 +36,7 @@ function seguentPregunta(objecte){
           pregunta.classList.remove("elementOcult");
           mostraResultat();
         }
+  }
 }  // FINAL   function passaSeguent()
 
 function guardaInputEscollit(objecte){
