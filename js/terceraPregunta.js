@@ -61,7 +61,7 @@ function guardaText(objecte){
   * */
 
   let pregunta, objId, numPreg, indexNumPreg, numPregSeguent;
-debugger;
+
   objId = objecte.id;
   numPreg = parseInt(objId.charAt(9));
   indexNumPreg = numPreg - 1;
@@ -72,11 +72,45 @@ debugger;
   console.log("La arrRespostes[" + indexNumPreg + "] = " + arrRespostes[indexNumPreg]);
  }
 
-
- function mostraResultat(){
-  /*  id="resultat"  */
+ function mostraResultat() {
   resultat = document.getElementById("resultat");
+  notaFinal = document.getElementById("notaFinal");
   resultat.classList.remove("elementOcult");
   resultat.classList.add("elementVisible");
-  
- }
+
+/*
+ * arrRespostes=[-1, -1, -1, -1];
+ * arrRespostesCorrectes=[1, 2, 3, 4];
+ */
+  // let textResultat = document.getElementById("textResultat");
+  let puntuacioTotal = 0;
+  let textResultat = "";
+
+  var str = "Hello world, welcome to the universe.";
+  var n = str.includes("world");
+
+  let textResposta, textRespostaCorrecta, conte;
+  for (let index = 0; index < arrRespostesCorrectes.length; index++) {
+    textResultat =  textResultat + "<h1>Pregunta #" + (index + 1) + "</h1>" +
+        "la correcta és " + arrRespostesCorrectes[index] + " i has respost " +
+                    arrRespostes[index] + "<br>";
+    textResposta = arrRespostes[index];
+    textRespostaCorrecta = arrRespostesCorrectes[index]
+    conte = textResposta.includes(textRespostaCorrecta);
+    
+    console.log("textResposta = " + textResposta);
+    console.log("textRespostaCorrecta = " + textRespostaCorrecta);
+    console.log("conte = " + conte);
+    
+    
+    if (conte){
+      textResultat =  textResultat + "<span class=\"unPunt\">Has obtingut 1 punt!<br></span>"
+      puntuacioTotal ++;
+    } else {
+      textResultat =  textResultat + "<span class=\"capPunt\">NO has obtingut cap punt!<br></span>"
+    }
+    
+  }
+  document.getElementById("textResultat").innerHTML = textResultat;
+  notaFinal.innerHTML = "Nota final = " + puntuacioTotal;
+}
