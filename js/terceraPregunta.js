@@ -74,5 +74,9 @@ debugger;
 
 
  function mostraResultat(){
-   
+  /*  id="resultat"  */
+  resultat = document.getElementById("resultat");
+  resultat.classList.remove("elementOcult");
+  resultat.classList.add("elementVisible");
+  
  }
