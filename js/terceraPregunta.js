@@ -1,10 +1,13 @@
-let arrRespostes=[4];
-let arrRespostesCorrectes=[4];
+let qtatPreguntes = 4;
+
+
+let arrRespostes=[qtatPreguntes];
+let arrRespostesCorrectes=[qtatPreguntes];
 
 arrRespostes=["buit", "buit", "buit", "buit"];
 arrRespostesCorrectes=["resp1", "resp2", "resp3", "resp4"];
 
-let ultimaPreg=4;
+let ultimaPreg = qtatPreguntes;
 
 function pasaSeguent(objecte){
   /*
@@ -83,7 +86,7 @@ function guardaText(objecte){
  * arrRespostesCorrectes=[1, 2, 3, 4];
  */
   // let textResultat = document.getElementById("textResultat");
-  let puntuacioTotal = arrRespostes.length;
+  let puntuacioTotal = qtatPreguntes;
   let puntuacio = 0;
   let textResultat = "";
 
@@ -100,7 +103,6 @@ function guardaText(objecte){
     console.log("textResposta = " + textResposta);
     console.log("textRespostaCorrecta = " + textRespostaCorrecta);
     console.log("conte = " + conte);
-    
     
     if (conte){
       textResultat =  textResultat + "<span class=\"unPunt\">Has obtingut 1 punt!<br></span>"
