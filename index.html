@@ -12,17 +12,19 @@
       <span class="groc">training</span>&nbsp;
       <span class="verd">???</span>
     </header>
-
     <main>
       <article>
+
           <section id="pregunta-1" class="elementVisible">
             <span class="titol">Pregunta #1</span>
             <h1 class="titolBranca">Branca: primeraPregunta + master</h1>
+
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
+
                 <input type="radio" name="preg_001" id="resp-01-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
@@ -40,6 +42,7 @@
               </label>
             </div> <!-- FINAL <div class="respostes">-->
             <button onclick="pasaSeguent(this)">Següent >></button>
+
           </section> <!-- FINAL <section id="pregunta-#"> -->
 
           <section id="pregunta-2" class="elementOcult">
@@ -49,23 +52,25 @@
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="radio" name="preg_002" id="resp-02-opcio-01"/>
+
+                <input type="checkbox" name="preg_002" id="resp-02-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_002" id="resp-02-opcio-02"/>
+                <input type="checkbox" name="preg_002" id="resp-02-opcio-02"/>
                 <span>Nemo enim ipsam voluptatem quia</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_002" id="resp-02-opcio-03"/>
+                <input type="checkbox" name="preg_002" id="resp-02-opcio-03"/>
                 <span>At vero eos et accusamus et iusto odio</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_002" id="resp-02-opcio-04"/>
+                <input type="checkbox" name="preg_002" id="resp-02-opcio-04"/>
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
-            <button onclick="pasaSeguent(this)">Següent >></button>
+            <button onclick="seguentPregunta(this)">Següent >></button>
+
           </section> <!-- FINAL <section id="pregunta-#"> -->
 
           <section id="pregunta-3" class="elementOcult">
@@ -75,23 +80,25 @@
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="radio" name="preg_003" id="resp-03-opcio-01"/>
+
+                <input type="checkbox" name="preg_003" id="resp-03-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_003" id="resp-03-opcio-02"/>
+                <input type="checkbox" name="preg_003" id="resp-03-opcio-02"/>
                 <span>Nemo enim ipsam voluptatem quia</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_003" id="resp-03-opcio-03"/>
+                <input type="checkbox" name="preg_003" id="resp-03-opcio-03"/>
                 <span>At vero eos et accusamus et iusto odio</span>
               </label>
               <label class="opcio">
-                <input type="radio" name="preg_003" id="resp-03-opcio-04"/>
+                <input type="checkbox" name="preg_003" id="resp-03-opcio-04"/>
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
-            <button onclick="pasaSeguent(this)">Següent >></button>
+            <button onclick="seguentPregunta(this)">Següent >></button>
+
           </section> <!-- FINAL <section id="pregunta-#"> -->
           
           <section id="pregunta-4" class="elementOcult">
@@ -101,6 +108,7 @@
             </div>
           <div class="respostes" onchange="guardaInputEscollit(this)">
             <label class="opcio">
+
               <input type="radio" name="preg_004" id="resp-04-opcio-01"/>
               <span>Seda ut perspiciatis unde omnis</span>
             </label>
@@ -118,6 +126,7 @@
             </label>
           </div> <!-- FINAL <div class="respostes">-->
           <button onclick="pasaSeguent(this)">Següent >></button>
+
         </section> <!-- FINAL <section id="pregunta-#"> -->
 
         <section id="resultat" class="elementOcult">
@@ -133,6 +142,9 @@
     <footer>
       <span>Designed and developed by DAW2© - 2020-2021 - All rights reserved</span>
     </footer>
+
+    <script src="./js/segonaPregunta.js"></script>
     <script src="./js/pregunta01.js"></script>
+
   </body>
 </html>
