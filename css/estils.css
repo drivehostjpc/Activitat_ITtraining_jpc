@@ -156,6 +156,11 @@ section span.resultat {
   text-align: center;
 }
 
+.titolBranca {
+  background-color: var(--botoInactiuFons);
+}
+
+
 .elementOcult {
   display: none;
 }
