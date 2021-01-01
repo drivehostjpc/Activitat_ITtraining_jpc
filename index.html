@@ -17,14 +17,11 @@
 
           <section id="pregunta-1" class="elementVisible">
             <span class="titol">Pregunta #1</span>
-            <h1 class="titolBranca">Branca: primeraPregunta + master</h1>
-
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-
                 <input type="radio" name="preg_001" id="resp-01-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
@@ -41,7 +38,8 @@
                 <span>Et harum quidem rerum facilis est et expedita</span>
               </label>
             </div> <!-- FINAL <div class="respostes">-->
-            <button onclick="pasaSeguent(this)">Següent >></button>
+            <button onclick="seguentPregunta(this)">Següent >></button>
+            <!-- <button onclick="pasaSeguent(this)">Següent >></button> -->
 
           </section> <!-- FINAL <section id="pregunta-#"> -->
 
@@ -52,7 +50,6 @@
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-
                 <input type="checkbox" name="preg_002" id="resp-02-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
@@ -80,7 +77,6 @@
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-
                 <input type="checkbox" name="preg_003" id="resp-03-opcio-01"/>
                 <span>Seda ut perspiciatis unde omnis</span>
               </label>
@@ -125,7 +121,8 @@
               <span>Et harum quidem rerum facilis est et expedita</span>
             </label>
           </div> <!-- FINAL <div class="respostes">-->
-          <button onclick="pasaSeguent(this)">Següent >></button>
+          <button onclick="seguentPregunta(this)">Següent >></button>
+          <!-- <button onclick="pasaSeguent(this)">Següent >></button> -->
 
         </section> <!-- FINAL <section id="pregunta-#"> -->
 
@@ -143,8 +140,9 @@
       <span>Designed and developed by DAW2© - 2020-2021 - All rights reserved</span>
     </footer>
 
-    <script src="./js/segonaPregunta.js"></script>
-    <script src="./js/pregunta01.js"></script>
+    <script src="./js/activitat_IT.js"></script>
+    <!-- <script src="./js/pregunta01.js"></script>
+    <script src="./js/segonaPregunta.js"></script> -->
 
   </body>
 </html>
