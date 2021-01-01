@@ -1,10 +1,10 @@
 let qtatPreguntes = 4;
 
-
+let respInicial = "buit";
 let arrRespostes=[qtatPreguntes];
 let arrRespostesCorrectes=[qtatPreguntes];
 
-arrRespostes=["buit", "buit", "buit", "buit"];
+arrRespostes=[respInicial, respInicial, respInicial, respInicial];
 arrRespostesCorrectes=["resp1", "resp2", "resp3", "resp4"];
 
 let ultimaPreg = qtatPreguntes;
@@ -31,9 +31,9 @@ function pasaSeguent(objecte){
 
    
    debugger;
-  if (arrRespostes[indexNumPreg]=="buit"){
+  if (arrRespostes[indexNumPreg]==respInicial){
   alert("No hi ha res!");
-  } else { // ELSE if (arrRespostes[numPreg]=="buit")
+  } else { // ELSE if (arrRespostes[numPreg]==respInicial)
     console.log("numPreg = " + numPreg);
     // alert("numPreg = " + numPreg);
     pregunta = document.getElementById("pregunta-" + numPreg);
@@ -46,7 +46,7 @@ function pasaSeguent(objecte){
     }else{
       mostraResultat();
     }   // FINAL if (numPreg == ultimaPreg)
-  }   // FINAL if (arrRespostes[numPreg]=="buit")
+  }   // FINAL if (arrRespostes[numPreg]==respInicial)
 }
 
 /***
