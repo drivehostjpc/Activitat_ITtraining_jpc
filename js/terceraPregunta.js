@@ -83,11 +83,10 @@ function guardaText(objecte){
  * arrRespostesCorrectes=[1, 2, 3, 4];
  */
   // let textResultat = document.getElementById("textResultat");
-  let puntuacioTotal = 0;
+  let puntuacioTotal = arrRespostes.length;
+  let puntuacio = 0;
   let textResultat = "";
 
-  var str = "Hello world, welcome to the universe.";
-  var n = str.includes("world");
 
   let textResposta, textRespostaCorrecta, conte;
   for (let index = 0; index < arrRespostesCorrectes.length; index++) {
@@ -105,12 +104,12 @@ function guardaText(objecte){
     
     if (conte){
       textResultat =  textResultat + "<span class=\"unPunt\">Has obtingut 1 punt!<br></span>"
-      puntuacioTotal ++;
+      puntuacio ++;
     } else {
       textResultat =  textResultat + "<span class=\"capPunt\">NO has obtingut cap punt!<br></span>"
     }
     
   }
   document.getElementById("textResultat").innerHTML = textResultat;
-  notaFinal.innerHTML = "Nota final = " + puntuacioTotal;
+  notaFinal.innerHTML = "Nota final = " + puntuacio + " de " + puntuacioTotal;
 }
