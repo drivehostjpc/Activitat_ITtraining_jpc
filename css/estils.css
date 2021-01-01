@@ -148,6 +148,10 @@ section span.titol {
   text-align: center;
 }
 
+.titolBranca {
+  background-color: var(--botoInactiuFons);
+}
+
 section span.resultat {
   /* align-self: flex-start; */
   color: var(--blau);
