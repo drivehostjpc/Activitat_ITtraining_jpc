@@ -140,6 +140,10 @@ section {
   justify-content: space-around;
 }
 
+section h1.titolBranca{
+  background-color: var(--botoInactiuFons);
+}
+
 section span.titol {
   /* align-self: flex-start; */
   color: var(--negre);
@@ -147,6 +151,11 @@ section span.titol {
   font-size: 4em;
   text-align: center;
 }
+
+.titolBranca {
+  background-color: var(--botoInactiuFons);
+}
+
 
 section span.resultat {
   /* align-self: flex-start; */
