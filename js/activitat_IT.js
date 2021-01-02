@@ -4,93 +4,104 @@ let glArrRespostes, glArrRespostesCorrectes;
 glUltimaPreg = 4;
 glViRadio = -1;
 glViCheckBox = "0000";
+glViText = "buit";
 
 glArrRespostes = [glUltimaPreg];
 glArrRespostesCorrectes = [glUltimaPreg];
 
 /**
- * pregunta-1 radio
+ * pregunta-1 text
  * pregunta-2 checkbox
- * pregunta-3 checkbox
- * pregunta-4 radio
+ * pregunta-3 radio
+ * pregunta-4 checkbox
  */
 
-// checkbox
-// arrPreguntes=[1, 2, 3, 4];
-// glArrRespostes=["0000","0000","0000","0000"];
-// glArrRespostesCorrectes=["1000","1100","1110","1111"];
-
-// radio
-// arrPreguntes=[1, 2, 3, 4];
-// glArrRespostes=[-1, -1, -1, -1];
-// glArrRespostesCorrectes=[0, 1, 2, 3];
-
-
-glArrRespostes=[glViRadio,glViCheckBox,glViCheckBox,glViRadio];
-glArrRespostesCorrectes=[0,"0100","0010",3];
+glArrRespostes=[glViText,glViCheckBox,glViRadio,glViCheckBox];
+glArrRespostesCorrectes=["resp1","0100",2,"0001"];
 
 
 function guardaInputEscollit(objecte){
-  // debugger;
- /*
- * objecte.parentElement.id => pregunta-1
- *                                      ^
- *                             0123456789
- * objId   = pregunta-1
- * numPreg = 1
- */
- let objId, numPreg, indexNumPreg;
- objId = objecte.parentElement.id 
- numPreg = parseInt(objId.charAt(9));
- indexNumPreg = numPreg - 1;
 
- let colInputs = objecte.children;
- let escollit;
- let escollits="";
+  /*
+  * objecte.parentElement.id => pregunta-1
+  *                                      ^
+  *                             0123456789
+  * objId   = pregunta-1
+  * numPreg = 1
+  */
 
- let tipusElement;
- tipusElement = objecte.children[0].children[0].type;
+  let objId, numPreg, indexNumPreg;
+  let colInputs, escollit, escollits, repostaText;
+  let seccio, tipusElement;
 
- console.log("objId = " + objId);
- console.log("numPreg = " + numPreg);
- console.log("indexNumPreg = " + indexNumPreg);
- console.log("tipusElement = " + tipusElement);
- console.log("tipusElement == radio  =>  " + (tipusElement=="radio") );
- console.log("tipusElement == checkbox  =>  " + (tipusElement=="checkbox") );
+  objId = objecte.parentElement.id 
+  numPreg = parseInt(objId.charAt(9));
+  indexNumPreg = numPreg - 1;
 
- for (let index = 0; index < colInputs.length; index++) {
+  colInputs = objecte.children;
+  escollit;
+  escollits="";
+  repostaText="";
+
+  seccio = document.getElementById("pregunta-" + numPreg);
+  opcio = seccio.children[2].children[0].children[0];
+
+  for (let index = 0; index < colInputs.length; index++) {
    if (colInputs[index].firstElementChild.checked){
      colInputs[index].classList.add("checked");
-     if (tipusElement=="radio") {
-       escollit = index;
-     } else { // ELSE --> if (tipusElement=="radio")
-       if (tipusElement=="checkbox") {
-         escollits = escollits + "1";
-       }  // FINAL --> if (tipusElement=="checkbox")
-     }  // FINAL --> if (tipusElement=="radio")
+     switch  (opcio.type) {
+       case "radio":
+        escollit = index;
+       break;
+
+       case "checkbox":
+        escollits = escollits + "1";
+       break;
+      } // FINAL switch  (opcio.type)
    } else {  // ELSE --> if (colInputs[index].firstElementChild.checked){
      colInputs[index].classList.remove("checked");
-     if (tipusElement=="checkbox") {
-       escollits = escollits + "0";
-     }  // FINAL --> if (tipusElement=="checkbox")
+     switch  (opcio.type) {
+      case "checkbox":
+        escollits = escollits + "0";
+       break;
+
+       case "text":
+        repostaText = document.getElementById("resp-0" + numPreg).value;
+       break;
+     }  // FINAL --> if (opcio.type=="checkbox")
    } // FINAL --> if (colInputs[index].firstElementChild.checked){
- }
+  }
 
- if (tipusElement=="radio") {
-   glArrRespostes[indexNumPreg] = escollit;
- } else {
-   if (tipusElement=="checkbox") {
-     glArrRespostes[indexNumPreg]=escollits;
+//  if (opcio.type=="radio") {
+//    glArrRespostes[indexNumPreg] = escollit;
+//  } else {
+//    if (opcio.type=="checkbox") {
+//      glArrRespostes[indexNumPreg]=escollits;
+//    }
+//  }
+
+  switch  (opcio.type) {
+    case "radio":
+      glArrRespostes[indexNumPreg] = escollit;
+    break;
+
+    case "checkbox":
+      glArrRespostes[indexNumPreg]=escollits;
+    break;
+
+    case "text":
+      glArrRespostes[indexNumPreg] = repostaText;
+    break;
    }
- }
 
- console.log("numPreg = " + numPreg);
- console.log("indexNumPreg = " + indexNumPreg);
- console.log("glArrRespostes[indexNumPreg] = " + glArrRespostes[indexNumPreg]);
- console.log("glArrRespostesCorrectes[indexNumPreg] = " + glArrRespostesCorrectes[indexNumPreg]);
- console.log("glArrRespostes = " + glArrRespostes);
- console.log("glArrRespostesCorrectes = " + glArrRespostesCorrectes);
- 
+
+  console.log("numPreg = " + numPreg);
+  console.log("indexNumPreg = " + indexNumPreg);
+  console.log("glArrRespostes[indexNumPreg] = " + glArrRespostes[indexNumPreg]);
+  console.log("glArrRespostesCorrectes[indexNumPreg] = " + glArrRespostesCorrectes[indexNumPreg]);
+  console.log("glArrRespostes = " + glArrRespostes);
+  console.log("glArrRespostesCorrectes = " + glArrRespostesCorrectes);
+
 } // FINAL function inputEscollit(objecte)
 
 
@@ -105,18 +116,32 @@ function seguentPregunta(objecte){
   numPreg = parseInt(objecteID.charAt(9));
   numPregSeguent = numPreg + 1;
   indexPreg = numPreg - 1;
-  tipusElement = objecte.parentElement.children[2].children[0].children[0].type;
 
-  if (tipusElement=="radio") {
-    valorInicial = glViRadio;
-  } else {  // ELSE --> if (tipusElement=="radio")
-    if (tipusElement=="checkbox") {
+  let seccio = document.getElementById("pregunta-" + numPreg);
+  tipusElement = seccio.children[2].children[0].children[0].type;
+
+  // tipusElement = objecte.parentElement.children[3].children[0].control.type; 
+  // objecte.children[0].children[0].type;
+  //objecte.parentElement.children[3].children[0].control.type
+  // tipusElement = objecte.parentElement.children[2].children[0].children[0].type;
+
+  switch  (tipusElement) {
+    case "radio":
+      valorInicial = glViRadio;
+    break;
+
+    case "checkbox":
       valorInicial = glViCheckBox;
-    }   // ELSE --> if (tipusElement=="checkbox")
-  }   // FINAL --> if (tipusElement=="radio")
-  if (glArrRespostes[indexPreg]==tipusElement){
+    break;
+
+    case "text":
+      valorInicial = glViText;
+    break;
+   }
+ 
+  if (glArrRespostes[indexPreg]==valorInicial){
     alert("No hi ha cap seleccionat!");
-  } else { // ELSE if (glArrRespostes[numPreg]==tipusElement)
+  } else { // ELSE if (glArrRespostes[numPreg]==valorInicial)
     pregunta = document.getElementById("pregunta-" + numPreg);
     pregunta.classList.remove("elementVisible");
     pregunta.classList.add("elementOcult");
@@ -130,8 +155,8 @@ function seguentPregunta(objecte){
       pregunta.classList.remove("elementOcult");
       mostraResultat();
     } // FINAL --> if (numPreg!=glUltimaPreg) 
-  } // FINAL --> if (glArrRespostes[numPreg]==tipusElement)
-}  // FINAL --> function passaSeguent()
+  } // FINAL --> if (glArrRespostes[numPreg]==valorInicial)
+}  // FINAL --> function seguentPregunta()
 
 function mostraResultat() {
   resultat = document.getElementById("resultat");
@@ -146,10 +171,26 @@ function mostraResultat() {
   // let textResultat = document.getElementById("textResultat");
   let puntuacioTotal = 0;
   let textResultat = "";
+  let esCorrecte = false;
   for (let index = 0; index < glArrRespostesCorrectes.length; index++) {
+    if (glArrRespostesCorrectes[index]==glArrRespostes[index]){
+      esCorrecte = true;
+    } else {
+      esCorrecte = false;
+
+    }
+    debugger;
+    
+    let okOno = (esCorrecte) ? "respOk":"respNok";
     textResultat =  textResultat + "<h1>Pregunta #" + (index + 1) + "</h1>" +
-        "la correcta és " + glArrRespostesCorrectes[index] + " i has respost " +
-                    glArrRespostes[index] + "<br>";
+        "la resp. corr. és <span class=\"respOk\">" + glArrRespostesCorrectes[index] + "</span><br>i has respost " +
+                    "<span class=\"" + okOno + "\">" + glArrRespostes[index] + "</span><br>";
+
+console.log("okOno = " + okOno);
+console.log("esCorrecte = " + esCorrecte);
+console.log("textResultat = " + textResultat);
+
+
     if (glArrRespostesCorrectes[index]==glArrRespostes[index]){
       textResultat =  textResultat + "<span class=\"unPunt\">Has obtingut 1 punt!<br></span>"
       puntuacioTotal ++;
@@ -159,5 +200,5 @@ function mostraResultat() {
     
   }
   document.getElementById("textResultat").innerHTML = textResultat;
-  notaFinal.innerHTML = "Nota final = " + puntuacioTotal;
+  notaFinal.innerHTML = "Nota final = " + puntuacioTotal + " de " + glUltimaPreg;
 }

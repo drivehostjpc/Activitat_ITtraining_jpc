@@ -22,6 +22,9 @@
   --ombra: #74b9ff;
   --grisfosc: #555555;
   --grisclar: #bbbbbb;
+  
+  --esCorrText: lightgreen;
+  --noEsCorrText: lightcoral;
 
   /* seccio */
   --seccioFons: var(--fons);
@@ -187,21 +190,26 @@ section span.resultat {
   border-color: greenyellow!important;
 }
 
-
-div.enunciat p {
+div.enunciat p, div.enunciat span {
   font-family: Enunciat;
   color: var(--enunciatText);
-  font-size: 1.5em;
   text-align: justify;
+}
+
+div.enunciat p {
+  font-size: 1.5em;
   padding: 0px 40px;
 }
 
-div.enunciat span {
-  font-family: Enunciat;
-  color: var(--enunciatText);
-  font-size: 1em;
-  text-align: justify;
+div.enunciat span.respOk {
+  color: var(--esCorrText);
 }
+
+div.enunciat span.respNok {
+  color: var(--noEsCorrText);
+}
+
+
 
 div.enunciat span.unPunt, div.enunciat span.capPunt {
   padding-left: 30px;
