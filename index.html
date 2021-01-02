@@ -15,39 +15,29 @@
     <main>
       <article>
 
-          <section id="pregunta-1" class="elementVisible">
+        <section id="pregunta-1" class="elementVisible" onchange="guardaText(this);">
+          <h1 class="titolBranca">Branca: terceraPregunta</h1>
+
             <span class="titol">Pregunta #1</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
-                <input type="radio" name="preg_001" id="resp-01-opcio-01"/>
-                <span>Seda ut perspiciatis unde omnis</span>
+ta
+                <input type="text" id="resp-01" name="resposta-1" placeholder="Ut enim ad minima veniam" />
               </label>
-              <label class="opcio">
-                <input type="radio" name="preg_001" id="resp-01-opcio-02"/>
-                <span>Nemo enim ipsam voluptatem quia</span>
-              </label>
-              <label class="opcio">
-                <input type="radio" name="preg_001" id="resp-01-opcio-03"/>
-                <span>At vero eos et accusamus et iusto odio</span>
-              </label>
-              <label class="opcio">
-                <input type="radio" name="preg_001" id="resp-01-opcio-04"/>
-                <span>Et harum quidem rerum facilis est et expedita</span>
-              </label>
-            </div> <!-- FINAL <div class="respostes">-->
-            <button onclick="seguentPregunta(this)">Següent >></button>
-            <!-- <button onclick="pasaSeguent(this)">Següent >></button> -->
+             </div> <!-- FINAL <div class="respostes">-->
+            <button onclick="pasaSeguent(this)">Següent >></button>
 
           </section> <!-- FINAL <section id="pregunta-#"> -->
 
-          <section id="pregunta-2" class="elementOcult">
+          <section id="pregunta-2" class="elementOcult" onchange="guardaText(this);">
             <span class="titol">Pregunta #2</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
+
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
                 <input type="checkbox" name="preg_002" id="resp-02-opcio-01"/>
@@ -70,11 +60,13 @@
 
           </section> <!-- FINAL <section id="pregunta-#"> -->
 
-          <section id="pregunta-3" class="elementOcult">
+
+          <section id="pregunta-3" class="elementOcult" onchange="guardaText(this);">
             <span class="titol">Pregunta #3</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
+
             <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
                 <input type="checkbox" name="preg_003" id="resp-03-opcio-01"/>
@@ -98,12 +90,14 @@
           </section> <!-- FINAL <section id="pregunta-#"> -->
           
           <section id="pregunta-4" class="elementOcult">
+
             <span class="titol">Pregunta #4</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
           <div class="respostes" onchange="guardaInputEscollit(this)">
             <label class="opcio">
+
 
               <input type="radio" name="preg_004" id="resp-04-opcio-01"/>
               <span>Seda ut perspiciatis unde omnis</span>
@@ -133,6 +127,7 @@
           </div>
           <span class="resultat" id="notaFinal"></span>
         </section> <!-- FINAL <section id="respostes"> -->
+
       </article>  <!-- FINAL <article> -->
     </main>  <!-- FINAL <main> -->
 
@@ -140,9 +135,13 @@
       <span>Designed and developed by DAW2© - 2020-2021 - All rights reserved</span>
     </footer>
 
+    <script src="./js/terceraPregunta.js"></script>
+
+
     <script src="./js/activitat_IT.js"></script>
     <!-- <script src="./js/pregunta01.js"></script>
     <script src="./js/segonaPregunta.js"></script> -->
+
 
   </body>
 </html>
