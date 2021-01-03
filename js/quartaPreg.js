@@ -23,7 +23,7 @@ arrRespostesCorrectes=["Temporibus autem quibusdam et aut officiis debitis",
 
 let ultimaPreg = qtatPreguntes;
 
-function pasaSeguent(objecte){
+function pasaSeguentOpcio(objecte){
   /*
   * objecte.parentElement.id => pregunta-1
   *                                      ^
@@ -68,7 +68,7 @@ function pasaSeguent(objecte){
  * 
  */
 
-function guardaText(objecte){
+function guardaTextOpcio(objecte){
   /* section id  ="pregunta-01"
   * objecte.id  => pregunta-01
   *                        ^
