@@ -62,23 +62,6 @@ function guardaInputEscollit(objecte){
     
   let esPregSelect = false;
 
-  switch  (tipusPreg) {
-    case "tx":
-      
-      break;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
   if ((objecte.children.length==4)&&(objecte.children[2].children[0].children[0].type=="select-one")) {
     let colRepostes = objecte.children[3].children[0].children[0];
     // if(colRepostes[index].selected){
