@@ -179,9 +179,9 @@ function mostraResultat() {
       esCorrecte = false;
 
     }
-    debugger;
-    
+   
     let okOno = (esCorrecte) ? "respOk":"respNok";
+    
     textResultat =  textResultat + "<h1>Pregunta #" + (index + 1) + "</h1>" +
         "la resp. corr. és <span class=\"respOk\">" + glArrRespostesCorrectes[index] + "</span><br>i has respost " +
                     "<span class=\"" + okOno + "\">" + glArrRespostes[index] + "</span><br>";

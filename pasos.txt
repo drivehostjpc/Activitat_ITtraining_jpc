@@ -1,0 +1,24 @@
+objecte -->  div.respostes
+seccio  -->  section#pregunta-1.elementVisible
+
+tipusElement = seccio.children[3].children[0].children[0].type;
+
+objecte.children[0].children[0].type  "text"
+
+<section id="pregunta-1" class="elementVisible">
+  <!-- seccio.children[0]. -->
+  <span class="titol">Pregunta #1</span>
+  <!-- seccio.children[1]. -->
+  <div class="enunciat">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
+  </div>
+  <!-- seccio.children[2]. -->
+  <div class="respostes" onchange="guardaInputEscollit(this)">
+    <!-- seccio.children[2].children[0] -->
+    <label class="opcio">  
+      <!-- seccio.children[2].children[0].children[0] == type="text"   -->
+      <input type="text" id="resp-01" name="resposta-1" placeholder="Ut enim ad minima veniam" />
+    </label>
+  </div> <!-- FINAL <div class="respostes">-->
+  <button onclick="seguentPregunta(this)">Següent >></button>
+</section> <!-- FINAL <section id="pregunta-#"> -->
