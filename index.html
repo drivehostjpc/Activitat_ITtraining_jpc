@@ -13,80 +13,78 @@
       <span class="verd">???</span>
     </header>
     <main>
-      <article>
-
-        <section id="pregunta-01-tx" class="elementVisible">
+        <article id="pregunta-01-tx" class="elementVisible">
           <span class="titol">Pregunta #1</span>
           <div class="enunciat">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
           </div>
           <div class="respostes" onchange="guardaInputEscollit(this)">
-            <label class="opcio">
+            <label class="opcio col1">
               <input type="text" id="resp-01" name="resposta-1" placeholder="Ut enim ad minima veniam" />
             </label>
           </div> <!-- FINAL <div class="respostes">-->
           <button onclick="seguentPregunta(this)">Següent >></button>
-        </section> <!-- FINAL <section id="pregunta-#"> -->
+        </article> <!-- FINAL <article id="pregunta-#"> -->
 
-        <section id="pregunta-02-ch" class="elementOcult">
+        <article id="pregunta-02-ch" class="elementOcult">
           <span class="titol">Pregunta #2</span>
           <div class="enunciat">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
           </div>
           <div class="respostes" onchange="guardaInputEscollit(this)">
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="checkbox" name="preg_002" id="resp-02-opcio-01"/>
               <span>Seda ut perspiciatis unde omnis</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="checkbox" name="preg_002" id="resp-02-opcio-02"/>
               <span>Nemo enim ipsam voluptatem quia</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="checkbox" name="preg_002" id="resp-02-opcio-03"/>
               <span>At vero eos et accusamus et iusto odio</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="checkbox" name="preg_002" id="resp-02-opcio-04"/>
               <span>Et harum quidem rerum facilis est et expedita</span>
             </label>
           </div> <!-- FINAL <div class="respostes">-->
           <button onclick="seguentPregunta(this)">Següent >></button>
-        </section> <!-- FINAL <section id="pregunta-#"> -->
+        </article> <!-- FINAL <article id="pregunta-#"> -->
 
-        <section id="pregunta-03-ra" class="elementOcult">
+        <article id="pregunta-03-ra" class="elementOcult">
           <span class="titol">Pregunta #3</span>
           <div class="enunciat">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
           </div>
           <div class="respostes" onchange="guardaInputEscollit(this)">
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="radio" name="preg_003" id="resp-03-opcio-01"/>
               <span>Seda ut perspiciatis unde omnis</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="radio" name="preg_003" id="resp-03-opcio-02"/>
               <span>Nemo enim ipsam voluptatem quia</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="radio" name="preg_003" id="resp-03-opcio-03"/>
               <span>At vero eos et accusamus et iusto odio</span>
             </label>
-            <label class="opcio">
+            <label class="opcio col2">
               <input type="radio" name="preg_003" id="resp-03-opcio-04"/>
               <span>Et harum quidem rerum facilis est et expedita</span>
             </label>
           </div> <!-- FINAL <div class="respostes">-->
           <button onclick="seguentPregunta(this)">Següent >></button>
-        </section> <!-- FINAL <section id="pregunta-#"> -->
+        </article> <!-- FINAL <article id="pregunta-#"> -->
 
-          <section id="pregunta-04-so" class="elementOcult">
+          <article id="pregunta-04-so" class="elementOcult">
             <span class="titol">Pregunta #4</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
             <div class="respostes" onchange="guardaInputEscollit(this)">
-              <label class="opcio">
+              <label class="opcio col1">
                 <select id="resp-04">
                   <option id="resp-04-00" selected>&lt;Escull una de les següents opcions.></option>
                   <option id="resp-04-01">At vero eos et accusamus et iusto odio</option>
@@ -96,16 +94,14 @@
               </label>
             </div> <!-- FINAL <div class="respostes"> -->
             <button onclick="seguentPregunta(this)">Següent >></button>
-          </section>  <!-- FINAL <section id="pregunta-#"> -->
+          </article>  <!-- FINAL <article id="pregunta-#"> -->
 
-        <section id="resultat" class="elementOcult">
+        <article id="resultat" class="elementOcult">
           <div class="enunciat">
-            <p><span id="textResultat"></span></p>
-          </div>
+            <span id="textResultat"></span>
+          </div>  <!-- FINAL <div class="enunciat"> -->
           <span class="titol" id="notaFinal">Resultat</span>
-        </section> <!-- FINAL <section id="resultat"> -->
-
-      </article>  <!-- FINAL <article> -->
+        </article> <!-- FINAL <article id="resultat"> -->
     </main>  <!-- FINAL <main> -->
 
     <footer>

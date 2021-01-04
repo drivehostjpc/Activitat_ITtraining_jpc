@@ -174,33 +174,30 @@ function mostraResultat() {
  */
   // let textResultat = document.getElementById("textResultat");
   let puntuacioTotal = 0;
+  let puntsResposta = 0;
   let textResultat = "";
   let resultatResposta = "";
 
   for (let index = 0; index < glArrRespostesCorrectes.length; index++) {
     resultatResposta = (glArrRespostesCorrectes[index]==glArrRespostes[index]) ? "respOk":"respNok";
+    puntsResposta = (glArrRespostesCorrectes[index]==glArrRespostes[index]) ? "<span class=\"unPunt\">Has obtingut 1 punt!<br></span></span>":"<span class=\"capPunt\">NO has obtingut cap punt!<br></span></span>";
+    puntuacioTotal = (glArrRespostesCorrectes[index]==glArrRespostes[index]) ? puntuacioTotal+1:puntuacioTotal+0;
 
-    textResultat =  textResultat + "<h1>Pregunta #" + (index + 1) + "</h1>" +
+    textResultat =  textResultat + "<span class=\"titolResposta\">Pregunta #" + (index + 1) + "</span>" +
+        puntsResposta + 
         "<span class=\"textResposta\">La resp. corr. és <span class=\"respOk\">" +
-        glArrRespostesCorrectes[index] + "</span></span><br>"+
-        "<span class=\"textResposta\">i has respost " +
+        glArrRespostesCorrectes[index] + "</span> i</span><br>"+
+        "<span class=\"textResposta\">la teva resp. és " +
         "<span class=\"" + resultatResposta + "\">" +
         glArrRespostes[index] + "</span></span><br>";
 
-    if (glArrRespostesCorrectes[index]==glArrRespostes[index]){
-      textResultat =  textResultat + "<span class=\"unPunt\">Has obtingut 1 punt!<br></span>"
-      puntuacioTotal ++;
-    } else {
-      textResultat =  textResultat + "<span class=\"capPunt\">NO has obtingut cap punt!<br></span>"
-    }
-  }  // FINAL ==>> for (let index = 0; index < glArrRespostesCorrectes.length; index++)
   document.getElementById("textResultat").innerHTML = textResultat;
-  notaFinal.innerHTML = "Nota final = " + puntuacioTotal + " de " + glUltimaPreg;
+  notaFinal.innerHTML = "Nota = " + puntuacioTotal + "/" + glUltimaPreg;
 }
 
 function obteSeguentPregunta(cadNumPregActual) {
 let cadNumPreg;
-let seccions = document.body.getElementsByTagName('section');
+let seccions = document.body.getElementsByTagName('article');
 let seguentPregunta, seccio;
   
   for (let i = 0, length = seccions.length; i < length; i++) {

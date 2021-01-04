@@ -26,6 +26,12 @@
   --esCorrText: lightgreen;
   --noEsCorrText: lightcoral;
 
+  --unPuntText: var(--negre);
+  --unPuntFons: lightgreen;
+
+  --capPuntText: var(--vermell);
+  --capPuntFons: lightcoral;
+
   /* seccio */
   --seccioFons: var(--fons);
   --seccioVora: var(--blanc);
@@ -125,14 +131,15 @@ main {
   align-items: stretch;
 }
 
-article {
+/* article {
   width: 80%;
   display: flex;
   justify-content: center;
-}
+} */
 
-section {
-  height: 90%;
+article {
+  width: 80%;
+  height: 95%;
   padding: 30px;
   border: 10px solid var(--seccioVora);
   background-color: var(--seccioFons);
@@ -140,14 +147,14 @@ section {
   border-radius: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-section h1.titolBranca{
+article h1.titolBranca{
   background-color: var(--botoInactiuFons);
 }
 
-section span.titol {
+article span.titol {
   /* align-self: flex-start; */
   color: var(--negre);
   font-family: Antiga;
@@ -160,7 +167,7 @@ section span.titol {
 }
 
 
-section span.resultat {
+article span.resultat {
   /* align-self: flex-start; */
   color: var(--blau);
   font-family: Antiga;
@@ -193,12 +200,15 @@ section span.resultat {
 div.enunciat p, div.enunciat span {
   font-family: Enunciat;
   color: var(--enunciatText);
-  text-align: justify;
+  text-align: left;
+}
+
+div.enunciat span {
+  font-size: 1.2em;
 }
 
 div.enunciat p {
   font-size: 1.5em;
-  padding: 0px 40px;
 }
 
 div.enunciat span.respOk {
@@ -209,39 +219,35 @@ div.enunciat span.respNok {
   color: var(--noEsCorrText);
 }
 
-div.enunciat span.textResposta {
-  padding-left: 40px;
+span.titolResposta {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  font-size: 1.5em!important;
 }
-
-
 
 div.enunciat span.unPunt, div.enunciat span.capPunt {
   padding-left: 70px;
   padding-right: 70px;
-  /* font-weight: bold; */
 }
 
 div.enunciat span.unPunt {
-  color: var(--negre);
-  background-color: lightgreen;
+  color: var(--unPuntText);
+  background-color:  var(--unPuntFons);
 }
 
 div.enunciat span.capPunt {
-  color: var(--vermell);
-  background-color: lightcoral;
+  color: var(--capPuntText);
+  background-color: var(--capPuntFons);
 }
 
 div.respostes {
    display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
-
-
 label.opcio {
-  width: 45%;
-  /* height: 60px; */
   margin: 10px;
   padding: 5px;
   border: 3px solid #74b9ff;
@@ -249,6 +255,14 @@ label.opcio {
   border-radius: 10px;
   line-height: 40px;
   vertical-align: middle;
+}
+
+label.opcio.col2 {
+  width: 45%;
+}
+
+label.opcio.col1 {
+  width: 100%;
 }
 
 label.opcio:hover {
