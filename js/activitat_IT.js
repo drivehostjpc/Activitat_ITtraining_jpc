@@ -135,10 +135,10 @@ function seguentPregunta(objecte){
       break; // FINAL case "tx":
     case "ra":
       valorInicial = glViRadio;
-      break; // FINAL case "tx":
+      break; // FINAL case "ra":
     case "so":
       valorInicial = glViSelectOne;
-      break; // FINAL case "tx":
+      break; // FINAL case "so":
   }
 
   if (glArrRespostes[indexNumPreg]==valorInicial){
