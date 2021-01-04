@@ -80,12 +80,12 @@
           <button onclick="seguentPregunta(this)">Següent >></button>
         </section> <!-- FINAL <section id="pregunta-#"> -->
 
-          <section id="pregunta-04-so" class="elementOcult"  onchange="guardaInputEscollit(this);">
+          <section id="pregunta-04-so" class="elementOcult">
             <span class="titol">Pregunta #4</span>
             <div class="enunciat">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce hendrerit diam vitae urna pulvinar commodo. Suspendisse tristique eu justo in dignissim. Phasellus ut nibh ornare, porttitor sapien a, eleifend massa?</p>
             </div>
-            <div class="respostes">
+            <div class="respostes" onchange="guardaInputEscollit(this)">
               <label class="opcio">
                 <select id="resp-04">
                   <option id="resp-04-00" selected>&lt;Escull una de les següents opcions.></option>
@@ -99,10 +99,10 @@
           </section>  <!-- FINAL <section id="pregunta-#"> -->
 
         <section id="resultat" class="elementOcult">
-          <span class="titol" id="notaFinal">Resultat</span>
           <div class="enunciat">
             <p><span id="textResultat"></span></p>
           </div>
+          <span class="titol" id="notaFinal">Resultat</span>
         </section> <!-- FINAL <section id="resultat"> -->
 
       </article>  <!-- FINAL <article> -->
