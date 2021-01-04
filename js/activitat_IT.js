@@ -2,6 +2,7 @@
 
 let glUltimaPreg, glViRadio, glViCheckBox, glViText, glViSelectOne;
 let glArrRespostes, glArrRespostesCorrectes;
+let glMarcador, glNomUsuari, glData;  // Afegit amb branca guardarMarcador
 
 glUltimaPreg = 4;
 
@@ -227,4 +228,15 @@ function mostraResultat() {
 
   document.getElementById("textResultat").innerHTML = textResultat;
   notaFinal.innerHTML = "Nota = " + puntuacioTotal + "/" + glUltimaPreg;
+
+  glMarcador = puntuacioTotal;            // Afegit amb branca guardarMarcador
+  let avui = new Date();                  // Afegit amb branca guardarMarcador
+  let dia = avui.getDay();                // Afegit amb branca guardarMarcador
+  let mes = avui.getMonth() + 1;          // Afegit amb branca guardarMarcador
+  dia = (dia<10)? "0"+dia:dia;            // Afegit amb branca guardarMarcador
+  mes = (mes<10)? "0"+mes:mes;            // Afegit amb branca guardarMarcador
+  let any = avui.getFullYear();           // Afegit amb branca guardarMarcador
+  glData = dia + "/" + mes + "/" +  any;  // Afegit amb branca guardarMarcador
+
+              
 } // FINAL ==>> function mostraResultat()

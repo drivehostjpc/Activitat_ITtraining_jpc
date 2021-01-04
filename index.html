@@ -101,7 +101,34 @@
             <span id="textResultat"></span>
           </div>  <!-- FINAL <div class="enunciat"> -->
           <span class="titol" id="notaFinal">Resultat</span>
+          <div class="enunciat">
+            <button onclick="guardarResposta(this)">Guardar</button>
+            <button onclick="javascript:window.close()">Tanca</button>
+          </div>
         </article> <!-- FINAL <article id="resultat"> -->
+
+        <article id="recullDades" class="elementOcult">
+          <span class="titol">Entrada de dades</span>
+          <div class="enunciat" onchange="guardaNom()">
+            <p>Entra el teu nom: <label class="opcio col3">
+              <input type="text" class="col3" id="nomUsuari" name="dadesUsuari" placeholder="Entra el teu nom" />
+            </label></p>
+          </div>
+          <div class="espai"></div>
+          <div class="enunciat">
+            <p>La teva puntucació és:<label class="opcio col3 mostra" id="puntsUsuari"></label></p>
+          </div>
+          <button onclick="guardaNom(this)">Guarda</button>
+        </article> <!-- FINAL <article id="recullDades"> -->
+
+        <article id="marcador" class="elementOcult">
+          <span class="titol">Marcador</span>
+          <table id="taulaMarcadors"></table>
+          <div class="espai"></div>
+          <div class="enunciat">
+            <button onclick="javascript:window.close()">Tanca</button>
+          </div>
+        </article> <!-- FINAL <article id="recullDades"> -->
     </main>  <!-- FINAL <main> -->
 
     <footer>
@@ -113,6 +140,7 @@
     <!-- <script src="./js/terceraPregunta.js"></script> -->
     <!-- <script src="./js/segonaPregunta.js"></script> -->
     <!-- <script src="./js/pregunta01.js"></script> -->
+    <script src="./js/guardarDadesLocalment.js"></script>
     <script src="./js/activitat_IT.js"></script>
 
 
